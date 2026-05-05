@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #fff1f2; /* rose-50 */
+  --color-surface-container: rgba(255, 255, 255, 0.4);
+  --color-on-surface: #881337; /* rose-900 */
+  --color-on-surface-variant: #be123c; /* rose-700 */
+  --color-primary: #f43f5e; /* rose-500 */
+  --color-primary-container: rgba(244, 63, 94, 0.1);
+  --color-secondary: #f97316; /* orange-500 */
+  --color-secondary-container: rgba(249, 115, 22, 0.1);
+  --color-accent-emerald: #059669;
+  
+  --font-sans: "Dancing Script", cursive;
+  --font-serif: "Plus Jakarta Sans", sans-serif;
+  --font-cursive: "Dancing Script", cursive;
+
+  --radius-xl: 2rem;
+}
+
+.dark {
+  --color-surface: #020617; /* deep slate-950 (navy black) */
+  --color-surface-container: rgba(15, 23, 42, 0.6);
+  --color-on-surface: #fff1f2; /* rose-50 */
+  --color-on-surface-variant: #fbcfe8; /* pink-200 */
+  --color-primary: #f43f5e; /* rose-500 */
+  --color-primary-container: rgba(244, 63, 94, 0.2);
+  --color-secondary: #fb923c; /* orange-400 */
+  --color-secondary-container: rgba(251, 146, 60, 0.2);
+}
+
+@layer base {
+  body {
+    @apply transition-colors duration-500 bg-surface font-sans text-on-surface overflow-x-hidden selection:bg-primary/20;
+  }
+}
+
+@layer utilities {
+  .glass-main {
+    @apply bg-white/40 dark:bg-[#1e0a0e]/60 backdrop-blur-2xl border-b border-white/50 dark:border-white/10;
+  }
+  .glass-card {
+    @apply bg-white/60 dark:bg-white/10 backdrop-blur-xl border border-white/60 dark:border-white/10 shadow-lg;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

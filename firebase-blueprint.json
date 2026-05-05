@@ -1,0 +1,64 @@
+{
+  "entities": {
+    "Message": {
+      "title": "Message",
+      "description": "Messages used for the live note feature",
+      "type": "object",
+      "properties": {
+        "text": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "author": { "type": "string", "enum": ["Him", "Admin"] }
+      },
+      "required": ["text", "createdAt", "author"]
+    },
+    "Moment": {
+      "title": "Moment",
+      "description": "A memory card in the gallery section",
+      "type": "object",
+      "properties": {
+        "image": { "type": "string", "description": "Base64 or URL" },
+        "title": { "type": "string" },
+        "date": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["image", "title", "createdAt"]
+    },
+    "ArchiveItem": {
+      "title": "ArchiveItem",
+      "description": "An image in the Instagram-style archive",
+      "type": "object",
+      "properties": {
+        "image": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["image", "createdAt"]
+    },
+    "Settings": {
+      "title": "Settings",
+      "description": "Global app configuration",
+      "type": "object",
+      "properties": {
+        "heroImage": { "type": "string" },
+        "archiveProfilePic": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/conversations/main/messages": {
+      "schema": "Message",
+      "description": "Messages displayed in the personal message section"
+    },
+    "/gallery": {
+      "schema": "Moment",
+      "description": "The scrolling gallery of moments"
+    },
+    "/archive": {
+      "schema": "ArchiveItem",
+      "description": "The Instagram-style photo archive"
+    },
+    "/settings/global": {
+      "schema": "Settings",
+      "description": "Global visual settings"
+    }
+  }
+}

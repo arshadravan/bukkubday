@@ -1,0 +1,6 @@
+{
+  "name": "Twin's Birthday Celebration",
+  "description": "A cursive-styled birthday celebration website for twins with live messaging, a scrolling gallery of moments, and an Instagram-style archive, all powered by Firebase for persistence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
